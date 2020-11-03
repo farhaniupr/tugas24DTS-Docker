@@ -43,7 +43,7 @@ func CreateAccount(ctx *controller.Ctx) {
 
 func Login(ctx *controller.Ctx) {
 	if ctx.Context.Request.Method == `GET` {
-		ctx.HTML(http.StatusOK, `guest_create-account.html`, gin.H{})
+		ctx.HTML(http.StatusOK, `guest_login.html`, gin.H{})
 		return
 	}
 	a := mAccounts.Account{}
@@ -67,7 +67,7 @@ func Login(ctx *controller.Ctx) {
 
 func Deposit(ctx *controller.Ctx) {
 	if ctx.Context.Request.Method == `GET` {
-		ctx.HTML(http.StatusOK, `guest_create-account.html`, gin.H{})
+		ctx.HTML(http.StatusOK, `guest_deposit.html`, gin.H{})
 		return
 	}
 	a := mAccounts.Account{}
@@ -98,7 +98,7 @@ func Deposit(ctx *controller.Ctx) {
 
 func Withdraw(ctx *controller.Ctx) {
 	if ctx.Context.Request.Method == `GET` {
-		ctx.HTML(http.StatusOK, `guest_create-account.html`, gin.H{})
+		ctx.HTML(http.StatusOK, `guest_withdraw.html`, gin.H{})
 		return
 	}
 	a := mAccounts.Account{}
@@ -129,7 +129,7 @@ func Withdraw(ctx *controller.Ctx) {
 
 func Transfer(ctx *controller.Ctx) {
 	if ctx.Context.Request.Method == `GET` {
-		ctx.HTML(http.StatusOK, `guest_create-account.html`, gin.H{})
+		ctx.HTML(http.StatusOK, `guest_transfer.html`, gin.H{})
 		return
 	}
 	a := mAccounts.Account{}
@@ -168,7 +168,7 @@ func Transfer(ctx *controller.Ctx) {
 func GetAccountDet(ctx *controller.Ctx) {
 
 	if ctx.Context.Request.Method == `GET` {
-		ctx.HTML(http.StatusOK, `guest_create-account.html`, gin.H{})
+		ctx.HTML(http.StatusOK, `guest_detail.html`, gin.H{})
 		return
 	}
 	a := mAccounts.Account{}
