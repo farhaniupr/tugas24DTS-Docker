@@ -1,0 +1,51 @@
+<html>
+<head>
+	<title>Deposit</title>
+</head>
+<body>
+<form method="post" onsubmit="return do_deposit()">
+	<label for="ID">ID</label>
+	<input name='ID' id="ID" type="number"/>
+	<br> </br>
+	<label for="transaction_type">Transaction type</label>
+	<input name="transaction_type" id="transaction_type"/>
+	<br> </br>
+	<label for="transaction_description">Transaction Deksripsi</label>
+	<input name="transaction_description" id="transaction_description"/>
+	<br> </br>
+	<label for="sender">Sender</label>
+	<input name="sender" id="sender"/>
+	<br> </br>
+	<label for="amount">Amount</label>
+	<input name="amount" id="amount"/>
+	<br> </br>
+	<label for="recipient">Recipient</label>
+	<input name="recipient" id="recipient" />
+    <br></br>
+    <br> </br>
+	<label for="timestamp">Timestamp</label>
+	<input name="timestamp" id="timestamp" />
+	<br></br>
+	<button>Transfer</button>
+</form>
+<div id="result"></div>
+<script>
+	function do_deposit() {
+		const ids = ['ID', 'transaction_type','transaction_description', 'sender', 'amount', 'recipient', 'timestamp'];
+		let data = {};
+		for( let ID of ids ) {
+			data[ ID ] = document.getElementById( ID ).value;
+		}
+		fetch('', {
+			method: 'post',
+			body: JSON.stringify(data),
+		} ).then( ( res ) => {
+			res.json().then((json) => {
+				document.getElementById( 'result' ).innerText = JSON.stringify(json);
+			})
+		} )
+		return false
+	}
+</script>
+</body>
+</html>

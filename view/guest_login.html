@@ -1,0 +1,35 @@
+<html>
+<head>
+	<title>Login</title>
+</head>
+<body>
+<form method="post" onsubmit="return do_login()">
+	<label for="IdAccount">Id Account</label>
+	<input name="IdAccount" id="IdAccount"/>
+	<br> </br>
+	<label for="Password">Password</label>
+	<input name='Password' id="Password"/>
+	<br> </br>
+	<button>Login</button>
+</form>
+<div id="result"></div>
+<script>
+	function do_login() {
+		const ids = ['IdAccount', 'Password'];
+		let data = {};
+		for( let IdAccount of ids ) {
+			data[ IdAccount ] = document.getElementById( IdAccount ).value;
+		}
+		fetch('', {
+			method: 'post',
+			body: JSON.stringify(data),
+		} ).then( ( res ) => {
+			res.json().then((json) => {
+				document.getElementById( 'result' ).innerText = JSON.stringify(json);
+			})
+		} )
+		return false
+	}
+</script>
+</body>
+</html>

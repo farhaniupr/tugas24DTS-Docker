@@ -1,0 +1,32 @@
+<html>
+<head>
+	<title>Detail Account</title>
+</head>
+<body>
+<form method="post" onsubmit="return do_detail()">
+	<label for="IdAccount">Id Account</label>
+	<input name="IdAccount" id="IdAccount"/>
+	<br> </br>
+	<button>Login</button>
+</form>
+<div id="result"></div>
+<script>
+	function do_detail() {
+		const ids = ['IdAccount'];
+		let data = {};
+		for( let IdAccount of ids ) {
+			data[ IdAccount ] = document.getElementById( IdAccount ).value;
+		}
+		fetch('', {
+			method: 'post',
+			body: JSON.stringify(data),
+		} ).then( ( res ) => {
+			res.json().then((json) => {
+				document.getElementById( 'result' ).innerText = JSON.stringify(json);
+			})
+		} )
+		return false
+	}
+</script>
+</body>
+</html>

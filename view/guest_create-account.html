@@ -1,0 +1,50 @@
+<html>
+<head>
+	<title>Create Account</title>
+</head>
+<body>
+<form method="post" onsubmit="return do_create_account()">
+	<label for="ID">ID</label>
+	<input name='ID' id="ID" type="number"/>
+	<br> </br>
+	<label for="IdAccount">Id Account</label>
+	<input name="IdAccount" id="id_account"/>
+	<br> </br>
+	<label for="Name">Name</label>
+	<input name="Name" id="name"/>
+	<br> </br>
+	<label for="Password">Password</label>
+	<input name='Password' id="password"/>
+	<br> </br>
+	<label for="AccountNumber">Account Number</label>
+	<input name="AccountNumber" id="account_number"/>
+	<br> </br>
+	<label for="Saldo">Saldo</label>
+	<input name="Saldo" id="Saldo" type="number"/>
+	<br></br>
+	<button>Create Account</button>
+</form>
+<div id="result"></div>
+<script>
+
+
+	function do_create_account() {
+		const ids = ['ID', 'id_account','name', 'password', 'account_number', 'saldo'];
+		let data = {};
+		for( let ID of ids ) {
+			data[ ID ] = document.getElementById( ID ).value;
+			//data[ Saldo ] = document.getElementById( Saldo ).value.
+		}
+		fetch('', {
+			method: 'post',
+			body: JSON.stringify(data),
+		} ).then( ( res ) => {
+			res.json().then((json) => {
+				document.getElementById( 'result' ).innerText = JSON.stringify(json);
+			})
+		} )
+		return false
+	}
+</script>
+</body>
+</html>
