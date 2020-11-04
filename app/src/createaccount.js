@@ -5,7 +5,7 @@ import axios from 'axios';
 
 export default class doCreate extends React.Component {
   state = {
-    ID: '',
+    ID: null,
     id_account: '',
     name : '',
     password : '',
@@ -53,7 +53,7 @@ export default class doCreate extends React.Component {
     event.preventDefault();
 
 
-    axios.post(`http://localhost:8084/guest/create`, {ID: this.state.ID, id_account: this.state.id_account, name : this.state.name, password: this.state.password, account_number: this.state.account_number, saldo:this.state.saldo})
+    axios.post(`http://localhost:8084/guest/create-account`, {ID: parseInt(this.state.ID,10), id_account: this.state.id_account, name : this.state.name, password: this.state.password, account_number: parseInt(this.state.account_number), saldo: parseInt(this.state.saldo)})
       .then(res => {
         console.log(res);
         console.log(res.data);
