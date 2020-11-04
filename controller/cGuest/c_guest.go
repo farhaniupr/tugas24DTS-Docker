@@ -26,7 +26,7 @@ func CreateAccount(ctx *controller.Ctx) {
 	err := ctx.ShouldBindJSON(&a)
 	res := map[string]interface{}{}
 	if err == nil {
-		err = a.IsValid()
+		//err = a.IsValid()
 	}
 	if err == nil {
 		tx := ctx.Db.Create(&a)
@@ -50,7 +50,7 @@ func Login(ctx *controller.Ctx) {
 	err := ctx.ShouldBindJSON(&a)
 	res := map[string]interface{}{}
 	if err == nil {
-		err = a.IsValidLogin()
+		//err = a.IsValidLogin()
 	}
 	if err == nil {
 		tx := ctx.Db.Where("id_account= ? AND password = ? ", &a.IdAccount, &a.Password).First(&a)

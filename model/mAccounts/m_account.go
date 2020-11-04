@@ -1,8 +1,6 @@
 package mAccounts
 
 import (
-	"errors"
-
 	"gorm.io/gorm"
 )
 
@@ -27,7 +25,7 @@ type Transaction struct {
 	Timestamp              string `json:"timestamp"`
 }
 
-func (a *Account) IsValid() error {
+/*func (a *Account) IsValid() error {
 	if a.ID == 0 {
 		return errors.New(`Id may not be empty`)
 	}
@@ -58,4 +56,4 @@ func (a *Account) IsValidLogin() error {
 		return errors.New(`Name may not be emmpty`)
 	}
 	return nil
-}
+}*/
