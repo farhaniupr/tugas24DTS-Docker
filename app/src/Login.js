@@ -1,10 +1,9 @@
-import logo from './logo.svg';
 import './App.css';
 
 import React, {useEffect} from 'react';
 import axios from 'axios';
 
-export default class PersonList extends React.Component {
+export default class doLogin extends React.Component {
   state = {
     id_account: '',
     password : '',
@@ -50,11 +49,10 @@ export default class PersonList extends React.Component {
             Password:
             <input type="text" name="password" onChange={this.handleChange2} />
           </label>
-          <button type="submit">Add</button>
+          <button type="submit">Login</button>
         </form>
       </div>
     )
   }
 }
 
-//export default App;
