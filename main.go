@@ -14,5 +14,6 @@ func main() {
 	server.AssignHandler(`/guest/withdraw`, cGuest.Withdraw)
 	server.AssignHandler(`/guest/transfer`, cGuest.Transfer)
 	server.AssignHandler(`/guest/detailac`, cGuest.GetAccountDet)
+
 	server.Listen(":8084")
 }
