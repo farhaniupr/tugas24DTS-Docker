@@ -13,7 +13,7 @@ import (
 )
 
 const (
-	MysqlDsn = `root:@/mahasiswa?parseTime=True&charset=utf8`
+	MysqlDsn = `root:root@tcp(172.19.0.10:3306)/mahasiswa?parseTime=True&charset=utf8`
 )
 
 type Server struct {
