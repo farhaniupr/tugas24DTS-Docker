@@ -41,7 +41,7 @@ func InitServer() *Server {
 	cfg.AllowHeaders = []string{"Authorization", "Origin", "Accept", "X-Requested-With", " Content-Type", "Access-Control-Request-Method", "Access-Control-Request-Headers"}
 	s.Router.Use(cors.New(cfg))
 
-	s.Router.LoadHTMLGlob("view/*")
+	//s.Router.LoadHTMLGlob("view/*")
 	return s
 }
 

@@ -5,8 +5,6 @@ import (
 	"net/http"
 	"tugas/controller"
 	"tugas/model/mAccounts"
-
-	"github.com/gin-gonic/gin"
 )
 
 type Result struct {
@@ -18,10 +16,7 @@ type Result2 struct {
 }
 
 func CreateAccount(ctx *controller.Ctx) {
-	if ctx.Context.Request.Method == `GET` {
-		ctx.HTML(http.StatusOK, `guest_create-account.html`, gin.H{})
-		return
-	}
+
 	a := mAccounts.Account{}
 	err := ctx.ShouldBindJSON(&a)
 	res := map[string]interface{}{}
@@ -42,10 +37,6 @@ func CreateAccount(ctx *controller.Ctx) {
 }
 
 func Login(ctx *controller.Ctx) {
-	if ctx.Context.Request.Method == `GET` {
-		ctx.HTML(http.StatusOK, `guest_login.html`, gin.H{})
-		return
-	}
 	a := mAccounts.Account{}
 	err := ctx.ShouldBindJSON(&a)
 	res := map[string]interface{}{}
@@ -66,10 +57,7 @@ func Login(ctx *controller.Ctx) {
 }
 
 func Deposit(ctx *controller.Ctx) {
-	if ctx.Context.Request.Method == `GET` {
-		ctx.HTML(http.StatusOK, `guest_deposit.html`, gin.H{})
-		return
-	}
+
 	a := mAccounts.Account{}
 	t := mAccounts.Transaction{}
 	err := ctx.ShouldBindJSON(&t)
@@ -97,10 +85,7 @@ func Deposit(ctx *controller.Ctx) {
 }
 
 func Withdraw(ctx *controller.Ctx) {
-	if ctx.Context.Request.Method == `GET` {
-		ctx.HTML(http.StatusOK, `guest_withdraw.html`, gin.H{})
-		return
-	}
+
 	a := mAccounts.Account{}
 	t := mAccounts.Transaction{}
 	err := ctx.ShouldBindJSON(&t)
@@ -128,10 +113,7 @@ func Withdraw(ctx *controller.Ctx) {
 }
 
 func Transfer(ctx *controller.Ctx) {
-	if ctx.Context.Request.Method == `GET` {
-		ctx.HTML(http.StatusOK, `guest_transfer.html`, gin.H{})
-		return
-	}
+
 	a := mAccounts.Account{}
 	t := mAccounts.Transaction{}
 	err := ctx.ShouldBindJSON(&t)
@@ -167,10 +149,6 @@ func Transfer(ctx *controller.Ctx) {
 
 func GetAccountDet(ctx *controller.Ctx) {
 
-	if ctx.Context.Request.Method == `GET` {
-		ctx.HTML(http.StatusOK, `guest_detail.html`, gin.H{})
-		return
-	}
 	a := mAccounts.Account{}
 	t := mAccounts.Transaction{}
 	err := ctx.ShouldBindJSON(&a)
