@@ -14,12 +14,6 @@ import GetAcc from './GetAcc';
 ReactDOM.render(
   <React.StrictMode>
     <App />
-    <Login/> 
-    <Createaccount/>
-    <Deposit/>
-    <Withdraw/>
-    <Transfer/>
-    <GetAcc/>
   </React.StrictMode>,
   document.getElementById('root')
 );
